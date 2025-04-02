@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="index.css">
 
@@ -11,8 +17,49 @@
 </head>
 
 <body>
-    <script src="index.js"></script>
-
+    <header>
+        <div class="header">
+            <h1>Jimmy's Diner</h1>
+            <h2>The best burgers and pizzas in town</h2>
+        </div>
+    </header>
+    <main>
+        <div class="main">
+            <!-- <div class="item">
+                <span class="icon">🍕</span>
+                <div class="description">
+                    <span class="name">Pizza</span>
+                    <span class="ingredients">pepperoni, mushroom, mozarella</span>
+                    <span class="price">$14</span>
+                </div>
+                <button class="add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div> -->
+        </div>
+        <div class="order">
+            <h1>Your Order</h1>
+            <div class="order-detail">
+                <p>
+                    <span class="name">Pizza</span>
+                    <span class="remove">remove</span>
+                    <span class="price">$14</span>
+                </p>
+                <p>
+                    <span class="name">Beer</span>
+                    <span class="remove">remove</span>
+                    <span class="price">$12</span>
+                </p>
+                <hr>
+                <p>
+                    <span class="name">Total Price:</span>
+                    <span class="price">$26</span>
+                </p>
+            </div>
+            <button id="complete">Complete order</button>
+        </div>
+    </main>
+    <script type="module" src="index.js"></script>
 </body>
 
 </html>
