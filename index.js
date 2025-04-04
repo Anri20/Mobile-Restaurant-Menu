@@ -27,10 +27,16 @@ main.innerHTML = menu
 
 const orderContainer = document.querySelector("div.order")
 const orderDetail = document.querySelector("div.order-detail")
+
 let orderList = []
+
+const modal = document.querySelector("form.modal")
+const thanks = document.querySelector("div.thanks")
 
 // default the display to none
 orderContainer.style.display = "none"
+modal.style.display = "none"
+thanks.style.display = "none"
 
 document.addEventListener("click", function (e) {
     if (e.target.dataset.add) {
@@ -71,4 +77,26 @@ document.addEventListener("click", function (e) {
     } else {
         orderContainer.style.display = "none"
     }
+
+    if(!modal.contains(e.target)){
+        modal.style.display = "none"
+    }
+    
+    if (e.target.id === "complete") {
+        modal.style.display = "flex"
+    }    
+})
+
+modal.addEventListener("submit", function (e) {
+    e.preventDefault()
+    const formData = new FormData(modal)
+    const card = Object.fromEntries(formData.entries())
+    
+    modal.style.display = "none"
+    orderContainer.style.display = "none"
+    orderDetail.innerHTML = ""
+    orderList.length = 0
+
+    thanks.innerHTML = `Thanks, ${card.name}!<br>Your order is on its way!`
+    thanks.style.display = "block"
 })

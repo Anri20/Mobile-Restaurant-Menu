@@ -61,6 +61,13 @@
         <div class="thanks">
             Thanks, James! Your order is on its way!
         </div>
+        <form class="modal">
+            <h1>Enter card details</h1>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            <input type="text" name="cardNumber" id="card-number" placeholder="Enter card number" pattern="^\d+$" required>
+            <input type="text" name="cvv" id="cvv" placeholder="Enter CVV" pattern="^\d{3}$" required>
+            <input type="submit" value="Pay" id="btn-pay">
+        </form>
     </main>
     <script type="module" src="index.js"></script>
 </body>

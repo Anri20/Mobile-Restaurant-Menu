@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    display: block;
     font-family: "Smythe", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -134,8 +133,8 @@ button#complete {
 }
 
 div.thanks {
-    display: none;
-    margin: 0 45px;
+    display: flex;
+    margin: 45px 45px 0 45px;
     padding: 50px;
     background-color: #ECFDF5;
     color: #065F46;
@@ -143,4 +142,46 @@ div.thanks {
     font-weight: 400;
     font-size: 2rem;
     border-radius: 5px;
+}
+
+form.modal {
+    padding: 30px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 5.5px 5.5px 255.5px 0px #00000080;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form.modal h1 {
+    font-size: 1.5rem;
+}
+
+input[type=text] {
+    border: 1px solid #757575;
+    border-radius: 1px;
+    color: #757575;
+    padding: 20px;
+    font-size: 1.25rem;
+}
+
+input[type=submit] {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-color: #16DB99;
+    border: none;
+    border-radius: 5px;
+    padding: 16px;
+    cursor: pointer;
 }
