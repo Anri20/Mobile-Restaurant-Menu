@@ -24,7 +24,6 @@ console.log(menu)
 main.innerHTML = menu
 
 
-
 const orderContainer = document.querySelector("div.order")
 const orderDetail = document.querySelector("div.order-detail")
 
@@ -34,16 +33,16 @@ const payment = document.querySelector("form.modal-payment")
 
 const rating = document.querySelector("div.modal-rating")
 const stars = document.querySelectorAll(".star")
-console.log(stars)
+
 const ratingText = document.getElementById("rating-value")
 
 const thanks = document.querySelector("div.thanks")
 
 // default the display to none
-orderContainer.style.display = "none"
-payment.style.display = "none"
-rating.style.display = "none"
-thanks.style.display = "none"
+// orderContainer.style.display = "none"
+// payment.style.display = "none"
+// rating.style.display = "none"
+// thanks.style.display = "none"
 
 document.addEventListener("click", function (e) {
     if (e.target.dataset.add) {

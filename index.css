@@ -86,7 +86,8 @@ button.add {
 }
 
 div.order {
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     gap: 50px;
     padding: 50px 45px 0 45px;
@@ -133,7 +134,8 @@ button#complete {
 }
 
 div.thanks {
-    display: flex;
+    /* display: flex; */
+    display: none;
     margin: 45px 45px 0 45px;
     padding: 50px;
     background-color: #ECFDF5;
@@ -147,7 +149,8 @@ div.thanks {
 form.modal-payment {
     padding: 30px;
     width: 400px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     gap: 24px;
     background-color: white;
@@ -189,7 +192,8 @@ input[type=submit] {
 div.modal-rating {
     padding: 30px;
     width: 400px;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     gap: 0px;
     background-color: white;
