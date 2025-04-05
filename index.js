@@ -30,12 +30,19 @@ const orderDetail = document.querySelector("div.order-detail")
 
 let orderList = []
 
-const modal = document.querySelector("form.modal")
+const payment = document.querySelector("form.modal-payment")
+
+const rating = document.querySelector("div.modal-rating")
+const stars = document.querySelectorAll(".star")
+console.log(stars)
+const ratingText = document.getElementById("rating-value")
+
 const thanks = document.querySelector("div.thanks")
 
 // default the display to none
 orderContainer.style.display = "none"
-modal.style.display = "none"
+payment.style.display = "none"
+rating.style.display = "none"
 thanks.style.display = "none"
 
 document.addEventListener("click", function (e) {
@@ -44,6 +51,7 @@ document.addEventListener("click", function (e) {
             item.id === parseInt(e.target.dataset.add)
         )
         console.log(food)
+        thanks.style.display = "none"
 
         orderList.push(food)
     }
@@ -78,25 +86,64 @@ document.addEventListener("click", function (e) {
         orderContainer.style.display = "none"
     }
 
-    if(!modal.contains(e.target)){
-        modal.style.display = "none"
+    if (!payment.contains(e.target)) {
+        payment.style.display = "none"
     }
-    
+
     if (e.target.id === "complete") {
-        modal.style.display = "flex"
-    }    
+        payment.style.display = "flex"
+    }
+
+    if (!rating.contains(e.target)) {
+        rating.style.display = "none"
+    }
+
+    if (e.target.id === "btn-confirm") {
+        rating.style.display = "none"
+    }
 })
 
-modal.addEventListener("submit", function (e) {
+payment.addEventListener("submit", function (e) {
     e.preventDefault()
-    const formData = new FormData(modal)
+    const formData = new FormData(payment)
     const card = Object.fromEntries(formData.entries())
-    
-    modal.style.display = "none"
+
+    payment.style.display = "none"
     orderContainer.style.display = "none"
     orderDetail.innerHTML = ""
     orderList.length = 0
 
+    rating.style.display = "flex"
+
     thanks.innerHTML = `Thanks, ${card.name}!<br>Your order is on its way!`
     thanks.style.display = "block"
 })
+
+stars.forEach(star => {
+    star.addEventListener('click', () => {
+        const rating = star.getAttribute('data-value');
+        ratingText.textContent = `Rating: ${rating}`;
+
+        stars.forEach(s => s.classList.remove('selected'));
+        star.classList.add('selected');
+        let prev = star.nextElementSibling;
+        while (prev) {
+            prev.classList.add('selected');
+            prev = prev.nextElementSibling;
+        }
+    });
+
+    star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+        star.classList.add('hover');
+        let prev = star.nextElementSibling;
+        while (prev) {
+            prev.classList.add('hover');
+            prev = prev.nextElementSibling;
+        }
+    });
+
+    star.addEventListener('mouseout', () => {
+        stars.forEach(s => s.classList.remove('hover'));
+    });
+});

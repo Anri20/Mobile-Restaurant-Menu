@@ -61,13 +61,26 @@
         <div class="thanks">
             Thanks, James! Your order is on its way!
         </div>
-        <form class="modal">
+        <form class="modal-payment">
             <h1>Enter card details</h1>
             <input type="text" name="name" id="name" placeholder="Enter your name" required>
-            <input type="text" name="cardNumber" id="card-number" placeholder="Enter card number" pattern="^\d+$" required>
+            <input type="text" name="cardNumber" id="card-number" placeholder="Enter card number" pattern="^\d+$"
+                required>
             <input type="text" name="cvv" id="cvv" placeholder="Enter CVV" pattern="^\d{3}$" required>
             <input type="submit" value="Pay" id="btn-pay">
         </form>
+        <div class="modal-rating">
+            <h1>How good are our application?</h1>
+            <div class="star-rating">
+                <span class="star" data-value="5">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="1">&#9733;</span>
+            </div>
+            <p id="rating-value">Rating: 0</p>
+            <input type="submit" value="Confirm" id="btn-confirm">
+        </div>
     </main>
     <script type="module" src="index.js"></script>
 </body>
